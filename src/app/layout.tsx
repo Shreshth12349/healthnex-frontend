@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={"flex flex-row"}>
+        <div className={"flex flex-row bg-[#F6F7FA]"}>
           <MainSidebar />
           <div className={"flex ml-20 h-screen flex-col w-full"}>
             <TopBar />

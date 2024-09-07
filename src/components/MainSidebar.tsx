@@ -11,6 +11,7 @@ import Link from "next/link";
 
 export default function MainSidebar() {
   const [openSidebar, setOpenSidebar] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={"flex flex-row h-full absolute left-0 top-0"}>
@@ -41,10 +42,26 @@ export default function MainSidebar() {
           </MenuItem>
           <MenuItem
             icon={<PencilSquareIcon className="h-6 w-6 stroke-gray-600" />}
-            component={<Link href={"/prescription"} />}
+            component={<Link href={"/"} />}
+            onClick={() => setIsOpen(!isOpen)}
+            className={`${isOpen ? "" : ""}`}
           >
             Prescription
           </MenuItem>
+          {openSidebar && isOpen && (
+            <ul className="">
+              <Link href={"/prescription/admin"}>
+                <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">
+                  Admin Access
+                </li>
+              </Link>
+              <Link href={"/prescription/user"}>
+                <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">
+                  User Access
+                </li>
+              </Link>
+            </ul>
+          )}
           <MenuItem
             icon={<UserIcon className="h-6 w-6 stroke-gray-600" />}
             component={<Link href={"/appointments"} />}
