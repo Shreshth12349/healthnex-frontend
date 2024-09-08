@@ -46,12 +46,6 @@ export default function AppointmentsTable() {
                 >
                     <span className="group inline-flex">
                       Appointment Date
-                      <span className="ml-2 flex-none rounded bg-gray-100 text-gray-900 group-hover:bg-gray-200">
-                        <ChevronDownIcon
-                          aria-hidden="true"
-                          className="h-5 w-5"
-                        />
-                      </span>
                     </span>
                 </th>
                 <th

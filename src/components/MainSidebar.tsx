@@ -19,7 +19,7 @@ export default function MainSidebar() {
       collapsed={!openSidebar}
       onMouseEnter={() => setOpenSidebar(true)}
       onMouseLeave={() => setOpenSidebar(false)}
-      width={"200px"}
+      width={"300px"}
       className="shadow h-screen fixed top-0 left-0 bg-opacity-100 bg-white text-black z-34"
     >
       <Link className="p-4" href={"/"}>
@@ -46,20 +46,6 @@ export default function MainSidebar() {
         >
           Patients
         </MenuItem>
-        {/*{openSidebar && isOpen && (*/}
-        {/*  <ul>*/}
-        {/*    <Link href={"/prescription/admin"}>*/}
-        {/*      <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">*/}
-        {/*        Admin Access*/}
-        {/*      </li>*/}
-        {/*    </Link>*/}
-        {/*    <Link href={"/prescription/user"}>*/}
-        {/*      <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">*/}
-        {/*        User Access*/}
-        {/*      </li>*/}
-        {/*    </Link>*/}
-        {/*  </ul>*/}
-        {/*)}*/}
         <MenuItem
           icon={<QueueListIcon className="h-6 w-6 stroke-gray-600" />}
           component={<Link href={"/appointments"} />}

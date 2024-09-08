@@ -6,8 +6,8 @@ import {useSearchParams} from 'next/navigation';
 import PatientHistory from "@/components/PatientHistory";
 import Diagnosis from "@/components/Diagnosis";
 import Prescription from "@/components/Prescription";
+import {useRouter} from "next/navigation";
 
-// Steps definition
 const steps = [
   { id: '01', name: 'Patient History', status: 'complete' },
   { id: '02', name: 'Diagnosis', status: 'current' },
@@ -18,8 +18,8 @@ export default function Slug() {
   const searchParams = useSearchParams();
   const [selected, setSelected] = useState<number>(1);
   const [completedSteps, setCompletedSteps] = useState<boolean[]>([true, false, false]);
+  const router = useRouter();
 
-  // Update the selected step based on the search params
   useEffect(() => {
     const stepParam = searchParams.get('step');
     if (stepParam) {
@@ -49,9 +49,11 @@ export default function Slug() {
       setSelected(selected + 1)
       markStepComplete(selected);
     }
+    else {
+      router.push("/appointments")
+    }
   }
 
-  // Function to render components based on the selected step
   const renderComponent = () => {
     switch (selected) {
       case 1:
@@ -137,15 +139,14 @@ export default function Slug() {
           </ol>
         </nav>
 
-        {/* Render the component based on selected step */}
         <div className="mt-8">
           {renderComponent()}
         </div>
 
-        <div className="flex mt-4 sm:ml-16 sm:mt-0 sm:flex-none justify-end">
+        <div className="flex sm:ml-16 sm:mt-0 sm:flex-none justify-end">
           <button
             type="button"
-            className="block rounded-md bg-indigo-600 px-4 py-3 text-center text-md font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="block rounded-md bg-indigo-600 mt-4 px-4 py-3 text-center text-md font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             onClick={handleStageButtonClick}
           >
             Complete Stage
