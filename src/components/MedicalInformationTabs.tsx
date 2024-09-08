@@ -26,6 +26,12 @@ const tabs = [
     current: false,
     value: MedicalHistoryTab.TREATMENTS,
   },
+  {
+    name: "Prescriptions",
+    href: "#",
+    current: false,
+    value: MedicalHistoryTab.PRESCRIPTIONS,
+  },
 ];
 
 function classNames(...classes: string[]) {

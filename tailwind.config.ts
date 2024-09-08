@@ -16,6 +16,9 @@ const config: Config = {
       margin: {
         "50": "200px",
       },
+      backgroundColor: {
+        "custom-white": "#FFFFFF",
+      },
     },
   },
   plugins: [],

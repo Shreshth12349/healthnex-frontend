@@ -31,7 +31,6 @@ export enum AppointmentType {
   EMERGENCY = "emergency",
 }
 
-
 export interface Prescription {
   id: number;
   medication: string;

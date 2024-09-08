@@ -69,7 +69,6 @@ export interface Prescription extends Base {
   medications: Medication[];
 }
 
-
 export interface Medicine {
   id: number;
   name: string;

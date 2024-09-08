@@ -7,7 +7,12 @@ interface TextAreaProps {
   onChange?: (value: string) => void;
 }
 
-export default function TextArea({ label = "Add your comment", rows = 4, placeholder = "Add you comment...", onChange }: TextAreaProps) {
+export default function TextArea({
+  label = "Add your comment",
+  rows = 4,
+  placeholder = "Add you comment...",
+  onChange,
+}: TextAreaProps) {
   const [text, setText] = useState<string>("");
 
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -21,7 +26,10 @@ export default function TextArea({ label = "Add your comment", rows = 4, placeho
   return (
     <div>
       {label && (
-        <label htmlFor="textarea" className="block text-md font-bold leading-6 text-gray-900">
+        <label
+          htmlFor="textarea"
+          className="block text-md font-bold leading-6 text-gray-900"
+        >
           {label}
         </label>
       )}

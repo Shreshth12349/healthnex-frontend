@@ -1,18 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import { TrashIcon } from "@heroicons/react/24/solid";
-import {Prescription} from "@/types/AppointmentTypes"
-import {medicines} from "@/SampleData"
-
+import { Prescription } from "@/types/AppointmentTypes";
+import { medicines } from "@/SampleData";
 
 const PrescriptionTable: React.FC = () => {
   const [prescriptions, setPrescriptions] = useState<Prescription[]>([]);
 
-  const [newPrescription, setNewPrescription] = useState<Partial<Prescription>>({
-    medication: "",
-    dosage: "",
-    duration: "",
-  });
+  const [newPrescription, setNewPrescription] = useState<Partial<Prescription>>(
+    {
+      medication: "",
+      dosage: "",
+      duration: "",
+    },
+  );
 
   const [searchTerm, setSearchTerm] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
@@ -35,13 +36,17 @@ const PrescriptionTable: React.FC = () => {
   const handleEditPrescription = (id: number, name: string, value: string) => {
     setPrescriptions((prev) =>
       prev.map((prescription) =>
-        prescription.id === id ? { ...prescription, [name]: value } : prescription
-      )
+        prescription.id === id
+          ? { ...prescription, [name]: value }
+          : prescription,
+      ),
     );
   };
 
   const handleRemovePrescription = (id: number) => {
-    setPrescriptions((prev) => prev.filter((prescription) => prescription.id !== id));
+    setPrescriptions((prev) =>
+      prev.filter((prescription) => prescription.id !== id),
+    );
   };
 
   const isDrugHarmful = (medication: string) => {
@@ -49,7 +54,7 @@ const PrescriptionTable: React.FC = () => {
     if (!currentMedicine) return false;
 
     return prescriptions.some((prescription) =>
-      currentMedicine.isHarmfulWith.includes(prescription.medication)
+      currentMedicine.isHarmfulWith.includes(prescription.medication),
     );
   };
 
@@ -61,7 +66,8 @@ const PrescriptionTable: React.FC = () => {
             Adding a Prescription
           </h1>
           <p className="mt-2 text-sm text-gray-700">
-            A list of all the prescriptions including medication, dosage, and duration.
+            A list of all the prescriptions including medication, dosage, and
+            duration.
           </p>
         </div>
         <div className="inline-flex justify-between gap-4 relative mt-4 sm:mt-0 sm:ml-4">
@@ -80,7 +86,9 @@ const PrescriptionTable: React.FC = () => {
             <ul className="absolute z-10 w-full bg-white border border-gray-300 shadow-lg mt-12 max-h-64 overflow-y-scroll">
               {medicines
                 .filter((medicine) =>
-                  medicine.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  medicine.name
+                    .toLowerCase()
+                    .includes(searchTerm.toLowerCase()),
                 )
                 .map((medicine) => (
                   <li
@@ -111,91 +119,93 @@ const PrescriptionTable: React.FC = () => {
             <div className="relative">
               <table className="min-w-full table-fixed divide-y divide-gray-300">
                 <thead>
-                <tr>
-                  <th></th>
-                  <th
-                    scope="col"
-                    className="min-w-[12rem] py-3.5 pr-3 text-left text-sm font-semibold text-gray-900"
-                  >
-                    Medication
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                  >
-                    Dosage
-                  </th>
-                  <th
-                    scope="col"
-                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                  >
-                    Duration
-                  </th>
-                  <th
-                    scope="col"
-                    className="relative py-3.5 pl-3 pr-4 sm:pr-3"
-                  >
-                    <span className="sr-only">Remove</span>
-                  </th>
-                </tr>
+                  <tr>
+                    <th></th>
+                    <th
+                      scope="col"
+                      className="min-w-[12rem] py-3.5 pr-3 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Medication
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Dosage
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Duration
+                    </th>
+                    <th
+                      scope="col"
+                      className="relative py-3.5 pl-3 pr-4 sm:pr-3"
+                    >
+                      <span className="sr-only">Remove</span>
+                    </th>
+                  </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                {prescriptions.map((prescription) => (
-                  <tr
-                    key={prescription.id}
-                    className={
-                      isDrugHarmful(prescription.medication)
-                        ? "bg-red-200"
-                        : ""
-                    }
-                  >
-                    <td className="relative px-7 sm:w-12 sm:px-6">
-                      <input
-                        type="checkbox"
-                        className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                      />
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {prescription.medication}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <input
-                        type="text"
-                        value={prescription.dosage}
-                        onChange={(e) =>
-                          handleEditPrescription(
-                            prescription.id,
-                            "dosage",
-                            e.target.value
-                          )
-                        }
-                        className="block w-full rounded-md border-gray-300 p-1 text-sm focus:border-indigo-500 focus:ring-indigo-500"
-                      />
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      <input
-                        type="text"
-                        value={prescription.duration}
-                        onChange={(e) =>
-                          handleEditPrescription(
-                            prescription.id,
-                            "duration",
-                            e.target.value
-                          )
-                        }
-                        className="block w-full rounded-md border-gray-300 p-1 text-sm focus:border-indigo-500 focus:ring-indigo-500"
-                      />
-                    </td>
-                    <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                      <button
-                        onClick={() => handleRemovePrescription(prescription.id)}
-                        className="text-red-600 hover:text-red-900"
-                      >
-                        <TrashIcon className="h-5 w-5" aria-hidden="true" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
+                  {prescriptions.map((prescription) => (
+                    <tr
+                      key={prescription.id}
+                      className={
+                        isDrugHarmful(prescription.medication)
+                          ? "bg-red-200"
+                          : ""
+                      }
+                    >
+                      <td className="relative px-7 sm:w-12 sm:px-6">
+                        <input
+                          type="checkbox"
+                          className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                        />
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        {prescription.medication}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <input
+                          type="text"
+                          value={prescription.dosage}
+                          onChange={(e) =>
+                            handleEditPrescription(
+                              prescription.id,
+                              "dosage",
+                              e.target.value,
+                            )
+                          }
+                          className="block w-full rounded-md border-gray-300 p-1 text-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        />
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <input
+                          type="text"
+                          value={prescription.duration}
+                          onChange={(e) =>
+                            handleEditPrescription(
+                              prescription.id,
+                              "duration",
+                              e.target.value,
+                            )
+                          }
+                          className="block w-full rounded-md border-gray-300 p-1 text-sm focus:border-indigo-500 focus:ring-indigo-500"
+                        />
+                      </td>
+                      <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
+                        <button
+                          onClick={() =>
+                            handleRemovePrescription(prescription.id)
+                          }
+                          className="text-red-600 hover:text-red-900"
+                        >
+                          <TrashIcon className="h-5 w-5" aria-hidden="true" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

@@ -23,6 +23,5 @@ export enum BloodGroup {
   ABplus = "AB+",
   ABminus = "AB-",
   Oplus = "O+",
-  Ominus = "O-"
+  Ominus = "O-",
 }
-

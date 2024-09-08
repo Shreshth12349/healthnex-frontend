@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import MedicalInformationTabs from "@/components/MedicalInformationTabs";
-import {MedicalHistoryTab} from "@/types";
+import { MedicalHistoryTab } from "@/types";
 import MedicalHistoryTable from "@/components/MedicalHistoryTable";
 import AllergiesTable from "@/components/AllergiesTable";
 import PastSurgeriesTable from "@/components/PastSurgeriesTable";
 import TreatmentsTable from "@/components/TreatmentsTable";
-import {useState} from "react";
+import { useState } from "react";
 import PastConsultationsTable from "@/components/PastConsultationsTable";
 
 export default function PatientHistory() {
@@ -107,13 +107,13 @@ export default function PatientHistory() {
           />
           <div className="mt-6">
             {activeTab === MedicalHistoryTab.MEDICAL_HISTORY && (
-              <MedicalHistoryTable/>
+              <MedicalHistoryTable />
             )}
-            {activeTab === MedicalHistoryTab.ALLERGIES && <AllergiesTable/>}
+            {activeTab === MedicalHistoryTab.ALLERGIES && <AllergiesTable />}
             {activeTab === MedicalHistoryTab.PAST_SURGERIES && (
-              <PastSurgeriesTable/>
+              <PastSurgeriesTable />
             )}
-            {activeTab === MedicalHistoryTab.TREATMENTS && <TreatmentsTable/>}
+            {activeTab === MedicalHistoryTab.TREATMENTS && <TreatmentsTable />}
           </div>
         </div>
       </div>
@@ -127,11 +127,10 @@ export default function PatientHistory() {
             </h3>
           </div>
           <div className="mt-6">
-            <PastConsultationsTable/>
+            <PastConsultationsTable />
           </div>
         </div>
       </div>
-
     </div>
   );
 }

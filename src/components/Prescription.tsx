@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import PrescriptionTable from "@/components/PrescriptionTable";
 
