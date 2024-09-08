@@ -3,7 +3,7 @@ import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import {
   CalendarIcon,
   ChartBarIcon,
-  PencilSquareIcon,
+  PencilSquareIcon, QueueListIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
@@ -14,14 +14,13 @@ export default function MainSidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={"flex flex-row h-full absolute left-0 top-0"}>
+    <div className={"flex flex-row h-full left-0 z-30 top-0 sticky"}>
       <Sidebar
-        title={"Hello"}
         collapsed={!openSidebar}
         onMouseEnter={() => setOpenSidebar(true)}
         onMouseLeave={() => setOpenSidebar(false)}
         width={"200px"}
-        className={"shadow h-full bg-opacity-100 bg-white"}
+        className={"shadow h-full bg-opacity-100 bg-white text-black"}
       >
         <div className="p-4">
           {openSidebar ? (
@@ -63,7 +62,7 @@ export default function MainSidebar() {
             </ul>
           )}
           <MenuItem
-            icon={<UserIcon className="h-6 w-6 stroke-gray-600" />}
+            icon={<QueueListIcon className="h-6 w-6 stroke-gray-600" />}
             component={<Link href={"/appointments"} />}
           >
             Appointments
@@ -74,6 +73,7 @@ export default function MainSidebar() {
           >
             Schedule
           </MenuItem>
+          <MenuItem icon={<UserIcon className="h-6 w-6 stroke-gray-600"/>} component={<Link href={'/profile'}/>}> Profile</MenuItem>
         </Menu>
       </Sidebar>
     </div>

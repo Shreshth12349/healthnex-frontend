@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className={"flex flex-row bg-[#F6F7FA]"}>
           <MainSidebar />
-          <div className={"flex ml-20 h-screen flex-col w-full"}>
+          <div className={"flex h-screen flex-col w-full"}>
             <TopBar />
             <div className={"p-8"}>{children}</div>
           </div>
