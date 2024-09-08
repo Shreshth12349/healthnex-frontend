@@ -14,3 +14,15 @@ export interface Patient extends Base {
   reports: Report[];
   prescriptions: Prescription[];
 }
+
+export enum BloodGroup {
+  Aplus = "A+",
+  Aminus = "A-",
+  Bplus = "B+",
+  Bminus = "B-",
+  ABplus = "AB+",
+  ABminus = "AB-",
+  Oplus = "O+",
+  Ominus = "O-"
+}
+
