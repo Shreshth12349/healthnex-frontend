@@ -30,3 +30,11 @@ export enum AppointmentType {
   FOLLOW_UP = "follow up",
   EMERGENCY = "emergency",
 }
+
+
+export interface Prescription {
+  id: number;
+  medication: string;
+  dosage: string;
+  duration: string;
+}

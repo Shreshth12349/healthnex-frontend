@@ -1,3 +1,5 @@
+import {Medicine} from "@/types/MedicationTypes"
+
 export const appointments = [
   {
     patientName: "Lindsay Walton",
@@ -365,3 +367,49 @@ export const pastConsultations = [
   },
 
 ];
+
+
+export const medicines: Medicine[] = [
+  { id: 1, name: "Aspirin", isHarmfulWith: ["Ibuprofen", "Clopidogrel"] },
+  { id: 2, name: "Ibuprofen", isHarmfulWith: ["Aspirin", "Warfarin"] },
+  { id: 3, name: "Paracetamol", isHarmfulWith: [] },
+  { id: 4, name: "Atorvastatin (Lipikind)", isHarmfulWith: ["Erythromycin", "Clarithromycin"] },
+  { id: 5, name: "Clopidogrel (Clopivas)", isHarmfulWith: ["Aspirin", "Omeprazole"] },
+  { id: 6, name: "Amoxicillin (Mox)", isHarmfulWith: ["Methotrexate"] },
+  { id: 7, name: "Cetirizine (Cetzine)", isHarmfulWith: ["Theophylline"] },
+  { id: 8, name: "Metformin (Glyciphage)", isHarmfulWith: ["Cimetidine", "Furosemide"] },
+  { id: 9, name: "Pantoprazole (Pantocid)", isHarmfulWith: ["Methotrexate"] },
+  { id: 10, name: "Losartan (Repace)", isHarmfulWith: ["Lithium", "Aspirin"] },
+  { id: 11, name: "Amlodipine (Amlong)", isHarmfulWith: ["Simvastatin"] },
+  { id: 12, name: "Levothyroxine (Thyronorm)", isHarmfulWith: ["Calcium Supplements", "Iron Supplements"] },
+  { id: 13, name: "Dicyclomine (Cyclopam)", isHarmfulWith: ["Aspirin", "Ibuprofen"] },
+  { id: 14, name: "Ranitidine (Rantac)", isHarmfulWith: ["Warfarin"] },
+  { id: 15, name: "Azithromycin (Azee)", isHarmfulWith: ["Warfarin", "Digoxin"] },
+  { id: 16, name: "Simvastatin (Simvotin)", isHarmfulWith: ["Grapefruit Juice", "Amlodipine"] },
+  { id: 17, name: "Hydrochlorothiazide (Hydrazide)", isHarmfulWith: ["Lithium", "NSAIDs"] },
+  { id: 18, name: "Furosemide (Lasix)", isHarmfulWith: ["Aminoglycosides", "Digoxin"] },
+  { id: 19, name: "Warfarin (Marevan)", isHarmfulWith: ["Aspirin", "Ibuprofen", "Azithromycin"] },
+  { id: 20, name: "Lisinopril (Lisotec)", isHarmfulWith: ["Potassium Supplements", "NSAIDs"] },
+  { id: 21, name: "Spironolactone (Aldactone)", isHarmfulWith: ["Potassium Supplements", "ACE Inhibitors"] },
+  { id: 22, name: "Omeprazole (Omez)", isHarmfulWith: ["Clopidogrel"] },
+  { id: 23, name: "Chlorpheniramine (Cetrizine)", isHarmfulWith: ["Alcohol", "Sedatives"] },
+  { id: 24, name: "Dexamethasone (Dexona)", isHarmfulWith: ["Anticoagulants", "Aspirin"] },
+  { id: 25, name: "Digoxin (Lanoxin)", isHarmfulWith: ["Amiodarone", "Verapamil"] },
+  { id: 26, name: "Verapamil (Calaptin)", isHarmfulWith: ["Beta Blockers", "Digoxin"] },
+  { id: 27, name: "Erythromycin (Eromycin)", isHarmfulWith: ["Statins", "Atorvastatin"] },
+  { id: 28, name: "Salmeterol (Serevent)", isHarmfulWith: ["Beta Blockers"] },
+  { id: 29, name: "Ciprofloxacin (Cifran)", isHarmfulWith: ["Theophylline", "Antacids"] },
+  { id: 30, name: "Levofloxacin (Levoflox)", isHarmfulWith: ["NSAIDs"] },
+  { id: 31, name: "Prednisolone (Omnacortil)", isHarmfulWith: ["NSAIDs", "Anticoagulants"] },
+  { id: 32, name: "Methotrexate (Trexall)", isHarmfulWith: ["NSAIDs", "Amoxicillin"] },
+  { id: 33, name: "Glibenclamide (Glyburide)", isHarmfulWith: ["Rifampicin", "Diuretics"] },
+  { id: 34, name: "Doxycycline (Doxy-1)", isHarmfulWith: ["Antacids", "Iron Supplements"] },
+  { id: 35, name: "Clarithromycin (Biaxin)", isHarmfulWith: ["Statins", "Digoxin"] },
+  { id: 36, name: "Telmisartan (Telma)", isHarmfulWith: ["NSAIDs", "Lithium"] },
+  { id: 37, name: "Gliclazide (Diamicron)", isHarmfulWith: ["Alcohol"] },
+  { id: 38, name: "Ondansetron (Emeset)", isHarmfulWith: ["Tramadol", "SSRIs"] },
+  { id: 39, name: "Carvedilol (Cardivas)", isHarmfulWith: ["Verapamil", "Digoxin"] },
+  { id: 40, name: "Metoprolol (Metolar)", isHarmfulWith: ["Verapamil", "Amlodipine"] },
+];
+
+
