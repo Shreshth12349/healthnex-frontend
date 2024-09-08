@@ -86,6 +86,7 @@ type Day = {
 }
 
 const days: Day[] = [
+    {date: '2024-08-26'},
     {date: '2024-08-27'},
     {date: '2024-08-28'},
     {date: '2024-08-29'},
@@ -127,7 +128,6 @@ const days: Day[] = [
     {date: '2024-10-03'},
     {date: '2024-10-04'},
     {date: '2024-10-05'},
-    {date: '2024-10-06'},
 ]
 
 function classNames(...classes: any[]) {
