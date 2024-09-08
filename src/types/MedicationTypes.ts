@@ -68,3 +68,10 @@ export interface Prescription extends Base {
   created_at: Date;
   medications: Medication[];
 }
+
+
+export interface Medicine {
+  id: number;
+  name: string;
+  isHarmfulWith: string[]; // List of drugs that interact harmfully
+}

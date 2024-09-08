@@ -3,7 +3,6 @@
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { appointments } from "@/SampleData";
 import CreateAppointmentButton from "@/components/CreateAppointmentButton";
-import Link from "next/link";
 import {useRouter} from "next/navigation";
 
 export default function AppointmentsTable() {

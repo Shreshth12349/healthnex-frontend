@@ -12,11 +12,12 @@ export default function MainSidebar() {
             collapsed={!openSidebar}
             onMouseEnter={() => setOpenSidebar(true)}
             onMouseLeave={() => setOpenSidebar(false)}
-            width={"200px"}
+            width={"300px"}
             className="shadow-lg h-screen fixed top-0 left-0 bg-white text-black z-50"
+            transitionDuration={400}
         >
-            <Link className="p-4 flex items-center justify-center" href={"/"}>
-                <h1 className="text-2xl font-bold transition text-center">
+            <Link className="p-4 flex items-start justify-start" href={"/"}>
+                <h1 className="text-2xl font-bold transition text-start justify-start">
                     {openSidebar ? "HealthNex" : "HN"}
                 </h1>
             </Link>
