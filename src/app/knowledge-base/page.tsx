@@ -176,7 +176,7 @@ const artifacts: any[] = [
 export default function KnowledgeBasePage() {
     const [searchTerm, setSearchTerm] = useState('');
     const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
-    const checkbox = useRef()
+    const checkbox = useRef<HTMLInputElement | null>(null);
     const [checked, setChecked] = useState(false)
     const [selectedArtifacts, setSelectedArtifacts] = useState<any[]>([]);
     const [selectedArtifact, setSelectedArtifact] = useState<any>([]);
@@ -187,7 +187,9 @@ export default function KnowledgeBasePage() {
         const isIndeterminate = selectedArtifacts.length > 0 && selectedArtifacts.length < artifacts.length
         setChecked(selectedArtifacts.length === artifacts.length)
         setIndeterminate(isIndeterminate)
-        checkbox.current.indeterminate = isIndeterminate
+        if (checkbox.current) {
+            checkbox.current.indeterminate = isIndeterminate;
+        }
     }, [selectedArtifacts])
 
     function toggleAll() {
