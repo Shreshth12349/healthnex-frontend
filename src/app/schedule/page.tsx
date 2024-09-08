@@ -151,8 +151,8 @@ export default function DoctorSchedulePage() {
     const filteredAppointments = appointments.filter(appointment => appointment.datetime.split('T')[0] === selectedDate);
 
     return (
-        <div>
-            <h2 className="text-base font-semibold leading-6 text-gray-900">Appointments</h2>
+        <div className={"w-full min-h-full shadow-lg rounded-lg p-8 bg-white"}>
+            <h2 className="text-2xl font-bold leading-6 text-gray-90">Schedule</h2>
             <div className="lg:grid lg:grid-cols-12 lg:gap-x-16">
 
                 {/* Calender */}

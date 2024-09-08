@@ -3,7 +3,7 @@ import {BellIcon, MagnifyingGlassIcon, UserCircleIcon} from "@heroicons/react/24
 
 export default function TopBar() {
     return (
-        <div className="bg-white h-16 shadow-md flex items-center justify-between px-4 sticky top-0 z-50">
+        <div className="bg-white min-h-16 shadow-md flex items-center justify-between px-4 sticky top-0 z-50">
             {/* Left side - Search bar */}
             <div className="flex items-center space-x-4">
                 <MagnifyingGlassIcon className="h-6 w-6 text-gray-500"/>
