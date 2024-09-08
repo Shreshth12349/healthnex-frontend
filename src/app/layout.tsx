@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import React from "react";
+import React, {Suspense} from "react";
 import MainSidebar from "@/components/MainSidebar";
 import TopBar from "@/components/TopBar";
+import LoadingAnimation from "@/components/LoadingAnimation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,9 @@ export default function RootLayout({
           <MainSidebar />
           <div className="flex flex-col w-full h-screen overflow-auto">
             <TopBar />
-            <div className="p-8 flex-grow">{children}</div>
+            <Suspense fallback={<LoadingAnimation/>}>
+              <div className="p-8 flex-grow">{children}</div>
+            </Suspense>
           </div>
         </div>
       </body>
