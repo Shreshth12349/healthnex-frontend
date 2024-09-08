@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import React from "react";
 import MainSidebar from "@/components/MainSidebar";
 import TopBar from "@/components/TopBar";
@@ -21,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={"flex flex-row bg-[#F6F7FA]"}>
+        <div className="flex bg-[#F6F7FA]">
           <MainSidebar />
-          <div className={"flex h-screen flex-col w-full"}>
+          <div className="flex flex-col w-full h-screen overflow-auto">
             <TopBar />
-            <div className={"p-8"}>{children}</div>
+            <div className="p-8 flex-grow">{children}</div>
           </div>
         </div>
       </body>

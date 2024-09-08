@@ -10,6 +10,7 @@
     "test": "next lint && npm run build"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.1.5",
     "next": "14.2.7",
     "prettier": "^3.3.3",

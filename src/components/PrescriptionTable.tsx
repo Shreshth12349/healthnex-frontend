@@ -29,7 +29,7 @@ const PrescriptionTable: React.FC = () => {
       medication: "",
       dosage: "",
       datePrescribed: "",
-    }
+    },
   );
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -1,5 +1,10 @@
+"use client";
+
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { appointments } from "@/SampleData";
+import { useState } from "react";
+import CreateAppointmentModal from "@/components/CreateAppointmentModal";
+import CreateAppointmentButton from "@/components/CreateAppointmentButton";
 
 export default function AppointmentsTable() {
   return (
@@ -11,12 +16,7 @@ export default function AppointmentsTable() {
           </h1>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <button
-            type="button"
-            className="block rounded-md bg-blue-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Add appointment
-          </button>
+          <CreateAppointmentButton />
         </div>
       </div>
       <div className="mt-8 flow-root">
@@ -24,7 +24,7 @@ export default function AppointmentsTable() {
           <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
-                <tr>
+                <tr className={"px-4"}>
                   <th
                     scope="col"
                     className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-0"
@@ -130,8 +130,11 @@ export default function AppointmentsTable() {
               </thead>
               <tbody className="divide-y divide-gray-200">
                 {appointments.map((appointment) => (
-                  <tr key={appointment.patientContact}>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                  <tr
+                    key={appointment.patientContact}
+                    className={"hover:bg-gray-50"}
+                  >
+                    <td className="whitespace-nowrap hover:text-blue-600 hover:underline hover:cursor-pointer py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                       {appointment.patientName}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
