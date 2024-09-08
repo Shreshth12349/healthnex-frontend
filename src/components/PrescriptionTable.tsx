@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import {ExclamationTriangleIcon, TicketIcon} from "@heroicons/react/24/solid";
 
 // Define the type for your table row data
 interface Prescription {
   id: number;
-  patientName: string;
   medication: string;
   dosage: string;
   datePrescribed: string;
@@ -14,7 +14,6 @@ const PrescriptionTable: React.FC = () => {
   const [prescriptions, setPrescriptions] = useState<Prescription[]>([
     {
       id: 1,
-      patientName: "John Doe",
       medication: "Aspirin",
       dosage: "100mg",
       datePrescribed: "2024-09-01",
@@ -25,7 +24,6 @@ const PrescriptionTable: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
   const [newPrescription, setNewPrescription] = useState<Partial<Prescription>>(
     {
-      patientName: "",
       medication: "",
       dosage: "",
       datePrescribed: "",
@@ -46,7 +44,6 @@ const PrescriptionTable: React.FC = () => {
       { id: newId, ...newPrescription } as Prescription,
     ]);
     setNewPrescription({
-      patientName: "",
       medication: "",
       dosage: "",
       datePrescribed: "",
@@ -59,21 +56,12 @@ const PrescriptionTable: React.FC = () => {
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-base font-semibold leading-6 text-gray-900">
-            Prescriptions
+            Adding a Prescription
           </h1>
           <p className="mt-2 text-sm text-gray-700">
             A list of all the prescriptions including patient name, medication,
             dosage, and date prescribed.
           </p>
-        </div>
-        <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <button
-            type="button"
-            onClick={() => setShowForm(true)}
-            className="block rounded-md bg-blue-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Add Prescription
-          </button>
         </div>
       </div>
       {showForm && (
@@ -96,7 +84,6 @@ const PrescriptionTable: React.FC = () => {
                 <input
                   type="text"
                   name="patientName"
-                  value={newPrescription.patientName || ""}
                   onChange={handleInputChange}
                   className="mt-1 min-h-8 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   required
@@ -172,12 +159,6 @@ const PrescriptionTable: React.FC = () => {
                       scope="col"
                       className="min-w-[12rem] py-3.5 pr-3 text-left text-sm font-semibold text-gray-900"
                     >
-                      Patient Name
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                    >
                       Medication
                     </th>
                     <th
@@ -190,7 +171,13 @@ const PrescriptionTable: React.FC = () => {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Date Prescribed
+                      Duration
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Status
                     </th>
                     <th
                       scope="col"
@@ -209,9 +196,6 @@ const PrescriptionTable: React.FC = () => {
                           className="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
                       </td>
-                      <td className="whitespace-nowrap py-4 pr-3 text-sm font-medium text-gray-900">
-                        {prescription.patientName}
-                      </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {prescription.medication}
                       </td>
@@ -220,6 +204,12 @@ const PrescriptionTable: React.FC = () => {
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {prescription.datePrescribed}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <div className={"inline-flex gap-2"}>
+                          <div className="px-2 py-1 rounded-md bg-blue-500 hover:bg-blue-300 text-white"><ExclamationTriangleIcon height={24}/></div>
+                          <div className="px-2 py-1 rounded-md bg-blue-500 hover:bg-blue-300 text-white"><TicketIcon height={24}/></div>
+                        </div>
                       </td>
                       <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
                         <a

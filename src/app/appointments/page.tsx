@@ -1,9 +1,13 @@
 import AppointmentsTable from "@/components/AppointmentsTable";
 
 export default function AppointmentsPage() {
-    return (
-        <div className={"w-full shadow-lg rounded-md p-4 py-8 bg-white rounded-lg"}>
-            <AppointmentsTable/>
-        </div>
-    );
+  return (
+    <div>
+      <div
+        className={"w-full shadow-lg p-4 py-8 bg-white rounded-lg"}
+      >
+        <AppointmentsTable />
+      </div>
+    </div>
+  );
 }

@@ -1,7 +1,11 @@
 "use client"
 
+import PrescriptionTable from "@/components/PrescriptionTable";
+
 export default function Prescription() {
   return (
-    <div>Prescription Component</div>
+    <div>
+      <PrescriptionTable />
+    </div>
   );
 }
