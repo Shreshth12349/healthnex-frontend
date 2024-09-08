@@ -41,30 +41,36 @@ export default function MainSidebar() {
         </MenuItem>
         <MenuItem
           icon={<PencilSquareIcon className="h-6 w-6 stroke-gray-600" />}
-          component={<Link href={"/"} />}
+          component={<Link href={"/patients"} />}
           onClick={() => setIsOpen(!isOpen)}
         >
-          Prescription
+          Patients
         </MenuItem>
-        {openSidebar && isOpen && (
-          <ul>
-            <Link href={"/prescription/admin"}>
-              <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">
-                Admin Access
-              </li>
-            </Link>
-            <Link href={"/prescription/user"}>
-              <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">
-                User Access
-              </li>
-            </Link>
-          </ul>
-        )}
+        {/*{openSidebar && isOpen && (*/}
+        {/*  <ul>*/}
+        {/*    <Link href={"/prescription/admin"}>*/}
+        {/*      <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">*/}
+        {/*        Admin Access*/}
+        {/*      </li>*/}
+        {/*    </Link>*/}
+        {/*    <Link href={"/prescription/user"}>*/}
+        {/*      <li className="flex justify-center hover:bg-gray-100 text-sm py-2 cursor-pointer">*/}
+        {/*        User Access*/}
+        {/*      </li>*/}
+        {/*    </Link>*/}
+        {/*  </ul>*/}
+        {/*)}*/}
         <MenuItem
           icon={<QueueListIcon className="h-6 w-6 stroke-gray-600" />}
           component={<Link href={"/appointments"} />}
         >
           Appointments
+        </MenuItem>
+        <MenuItem
+          icon={<ChartBarIcon className="h-6 w-6 stroke-gray-600" />}
+          component={<Link href={"/appointments"} />}
+        >
+          Medical Knowledge Base
         </MenuItem>
         <MenuItem
           icon={<CalendarIcon className="h-6 w-6 stroke-gray-600" />}
