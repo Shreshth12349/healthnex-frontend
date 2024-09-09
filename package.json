@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "typecheck": "tsc --noEmit",
     "lint": "next lint",
-    "test": "next lint && npm run build"
+    "test": "next lint && npm run typecheck"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.5",
