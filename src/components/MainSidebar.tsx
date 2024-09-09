@@ -23,13 +23,13 @@ export default function MainSidebar() {
             </Link>
             <Menu>
 
-                <MenuItem
-                    icon={<ChartBarIcon className="h-6 w-6 text-gray-600"/>}
-                    component={<Link href={"/dashboard"}/>}
-                    className="hover:bg-gray-100"
-                >
-                    Dashboard
-                </MenuItem>
+                {/*<MenuItem*/}
+                {/*    icon={<ChartBarIcon className="h-6 w-6 text-gray-600"/>}*/}
+                {/*    component={<Link href={"/dashboard"}/>}*/}
+                {/*    className="hover:bg-gray-100"*/}
+                {/*>*/}
+                {/*    Dashboard*/}
+                {/*</MenuItem>*/}
 
                 <MenuItem
                     icon={<PencilSquareIcon className="h-6 w-6 text-gray-600"/>}
