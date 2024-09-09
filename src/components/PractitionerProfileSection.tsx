@@ -3,22 +3,22 @@ import Image from "next/image";
 
 export default function PractitionerProfileSection() {
   return (
-    <div className={"bg-custom-white p-4 rounded-lg shadow-md"}>
-      <div className={"flex flex-row gap-8"}>
-        <div className="px-4 sm:px-0">
-          <h3 className="text-base font-semibold leading-7 text-gray-900">
+    <div className={"bg-custom-white p-8 rounded-lg shadow-md"}>
+      <div className={"flex flex-row justify-between gap-8"}>
+        <div className="sm:px-0">
+          <h2 className="text-2xl font-bold leading-6 text-gray-900">
             My Profile
-          </h3>
-          <p className="max-w-2xl text-sm leading-6 text-gray-500 mt-4">
-            Personal details
-          </p>
+          </h2>
+          {/*<p className="max-w-2xl text-sm leading-6 text-gray-500 mt-4">*/}
+          {/*  Personal details*/}
+          {/*</p>*/}
         </div>
         <Image
-          src={"/doctor_pfp.jpg"}
-          height={100}
-          width={100}
-          alt={"doctor profile picture"}
-          className={"rounded-full mr-16 border-2 border-red-500"}
+            src={"/doctor_pfp.jpg"}
+            height={100}
+            width={100}
+            alt={"doctor profile picture"}
+          className={"rounded-full border-2 border-red-500"}
         />
       </div>
       <div className="mt-6 border-t border-gray-100">
