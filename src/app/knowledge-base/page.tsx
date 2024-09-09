@@ -281,20 +281,6 @@ export default function KnowledgeBasePage() {
                       </span>
                     </a>
                   </th>
-                  <th
-                    scope="col"
-                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                  >
-                    <a href="#" className="group inline-flex">
-                      Trust Score
-                      <span className="invisible ml-2 flex-none rounded text-gray-400 group-hover:visible group-focus:visible">
-                        <ChevronDownIcon
-                          aria-hidden="true"
-                          className="invisible ml-2 h-5 w-5 flex-none rounded text-gray-400 group-hover:visible group-focus:visible"
-                        />
-                      </span>
-                    </a>
-                  </th>
                   <th scope="col" className="relative py-3.5 pl-3 pr-0">
                     <span className="sr-only">Edit</span>
                   </th>
@@ -329,9 +315,6 @@ export default function KnowledgeBasePage() {
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                       {artifact.category}
-                    </td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {artifact.trust_score}
                     </td>
                     <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm sm:pr-0">
                       <button

@@ -175,6 +175,93 @@ export default function ArtifactSideDrawer({
                                                     </div>
                                                 </>
                                             )}
+
+                                            {selectedArtifact.category === "Book" && (
+                                                <>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            Author
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.author}
+                                                        </dd>
+                                                    </div>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            Publisher
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.publisher}
+                                                        </dd>
+                                                    </div>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            ISBN
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.isbn}
+                                                        </dd>
+                                                    </div>
+                                                </>
+                                            )}
+
+                                            {selectedArtifact.category === "Medical Journal" && (
+                                                <>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            Editor in Chief
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.editor_in_chief}
+                                                        </dd>
+                                                    </div>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            Publisher
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.publisher}
+                                                        </dd>
+                                                    </div>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            ISSN
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.issn}
+                                                        </dd>
+                                                    </div>
+                                                </>
+                                            )}
+
+                                            {selectedArtifact.category === "Neuroscience Dataset" && (
+                                                <>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            Organization
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.organization}
+                                                        </dd>
+                                                    </div>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            Focus Area
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.focus_area}
+                                                        </dd>
+                                                    </div>
+                                                    <div className="sm:flex sm:px-6 sm:py-5">
+                                                        <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                                            Dataset Size
+                                                        </dt>
+                                                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
+                                                            {selectedArtifact.dataset_size}
+                                                        </dd>
+                                                    </div>
+                                                </>
+                                            )}
                                         </dl>
                                     </div>
                                 </div>

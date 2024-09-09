@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import { useState } from "react";
+import {useRouter} from "next/navigation";
 
 type Appointment = {
   id: number;
@@ -42,7 +43,7 @@ const appointments: Appointment[] = [
   {
     id: 3,
     datetime: "2024-09-09T09:00",
-    patientName: "Michael Brown",
+    patientName: "Rahul Sharma",
     patientImage:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=256&h=256&q=80",
     location: "Clinic Room 2",
@@ -159,6 +160,8 @@ const formatTime = (datetime: string): string => {
 };
 
 export default function DoctorSchedulePage() {
+  const router = useRouter();
+
   const today = days.filter((day) => day.isToday == true)[0].date;
   const [selectedDate, setSelectedDate] = useState<string>(today);
 
@@ -239,7 +242,10 @@ export default function DoctorSchedulePage() {
             filteredAppointments.map((appointment) => (
               <li
                 key={appointment.id}
-                className="relative flex space-x-6 py-6 xl:static"
+                className="relative flex space-x-6 py-6 xl:static hover:cursor-pointer"
+                onClick={() =>
+                    router.push(`/appointments/9827131123`)
+                }
               >
                 <Image
                   src={appointment.patientImage}
