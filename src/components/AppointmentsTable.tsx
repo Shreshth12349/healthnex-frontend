@@ -84,7 +84,7 @@ export default function AppointmentsTable() {
                 {appointments.map((appointment) => (
                   <tr
                     key={appointment.patientContact}
-                    className="hover:bg-gray-50"
+                    className="hover:bg-gray-50 hover:cursor-pointer"
                     onClick={() =>
                       router.push(`/appointments/${appointment.patientContact}`)
                     }

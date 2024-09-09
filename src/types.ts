@@ -4,4 +4,5 @@ export enum MedicalHistoryTab {
   PAST_SURGERIES = "Past Surgeries",
   TREATMENTS = "Treatments",
   PRESCRIPTIONS = "Prescriptions",
+  PREVIOUS_CONSULTATIONS = "Previous Consultations",
 }

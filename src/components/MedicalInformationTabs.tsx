@@ -27,10 +27,10 @@ const tabs = [
     value: MedicalHistoryTab.TREATMENTS,
   },
   {
-    name: "Prescriptions",
+    name: "Previous Consultations",
     href: "#",
     current: false,
-    value: MedicalHistoryTab.PRESCRIPTIONS,
+    value: MedicalHistoryTab.PREVIOUS_CONSULTATIONS,
   },
 ];
 
