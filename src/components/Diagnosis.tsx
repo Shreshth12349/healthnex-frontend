@@ -9,14 +9,14 @@ export default function Diagnosis() {
       <div className="m-4">
         <SymptomsTable />
       </div>
-      <div className="m-4 mt-8 p-8">
+      <div className="mt-8 px-12">
         <TextArea
           label={"Diagnosis"}
           placeholder={"Add a Diagnosis..."}
           rows={6}
         />
       </div>
-      <div className="m-4 p-8">
+      <div className="mt-8 px-12">
         <TextArea
           label={"Treatment Plan"}
           placeholder={"Add a Treatment Plan..."}
