@@ -1,6 +1,7 @@
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Dispatch, SetStateAction } from "react";
+import {Dispatch, ReactNode, SetStateAction} from "react";
+import {Medication} from "@/types/MedicationTypes";
 
 type ArtifactSideDrawerProps = {
   isDrawerOpen: boolean;
@@ -108,7 +109,7 @@ export default function ArtifactSideDrawer({
                                 {Object.entries(selectedArtifact.warnings).map(
                                   ([key, value]) => (
                                     <li key={key}>
-                                      {key} - {value}
+                                      {key} - {value as ReactNode}
                                     </li>
                                   ),
                                 )}
@@ -122,7 +123,7 @@ export default function ArtifactSideDrawer({
                             <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:ml-6 sm:mt-0">
                               <ul>
                                 {selectedArtifact.substitutes.map(
-                                  (substitute) => (
+                                  (substitute: any) => (
                                     <li key={substitute.name}>
                                       {substitute.name}
                                     </li>
