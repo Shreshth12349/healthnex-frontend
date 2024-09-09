@@ -8,8 +8,14 @@ import PastSurgeriesTable from "@/components/PastSurgeriesTable";
 import TreatmentsTable from "@/components/TreatmentsTable";
 import { useState } from "react";
 import PastConsultationsTable from "@/components/PastConsultationsTable";
+import { useParams } from "next/navigation";
+import { appointments } from "@/SampleData";
 
 export default function PatientHistory() {
+  const { patientContact } = useParams();
+  const selectedPatient = appointments.find(
+    (appointment) => appointment.patientContact == patientContact,
+  );
   const [activeTab, setActiveTab] = useState<MedicalHistoryTab>(
     MedicalHistoryTab.MEDICAL_HISTORY,
   );
@@ -30,7 +36,7 @@ export default function PatientHistory() {
                 Full name
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:mt-2">
-                Rahul Sharma
+                {selectedPatient?.patientName}
               </dd>
             </div>
             <div className="border-t border-gray-100 px-4 py-6 sm:col-span-1 sm:px-0">

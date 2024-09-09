@@ -9,7 +9,8 @@ export default function PatientPrescriptionTable() {
             Prescriptions
           </h1>
           <p className="mt-2 text-sm text-gray-700">
-            A list of all the prescriptions including the medication, dosage and duration.
+            A list of all the prescriptions including the medication, dosage and
+            duration.
           </p>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">

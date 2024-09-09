@@ -1,6 +1,6 @@
 import { Medicine } from "@/types/MedicationTypes";
 import { Prescription } from "@/types/AppointmentTypes";
-import {Gender} from "@/types/UserTypes";
+import { Gender } from "@/types/UserTypes";
 
 export const appointments = [
   {
@@ -368,14 +368,14 @@ export const pastConsultations = [
 ];
 
 export interface PatientSample {
-  uuid: string
-  fullName: string
-  age: number
-  gender: string
-  phone: string
-  email: string
-  bloodGroup: string
-  address: string
+  uuid: string;
+  fullName: string;
+  age: number;
+  gender: string;
+  phone: string;
+  email: string;
+  bloodGroup: string;
+  address: string;
 }
 
 export const patients: PatientSample[] = [
